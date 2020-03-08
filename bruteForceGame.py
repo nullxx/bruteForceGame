@@ -7,8 +7,8 @@ import string, sys, time, os
 def notification(title, message):
 	# send notification for macos
     os.system("""
-              osascript -e 'display notification "{}" with title "{}"'
-              """.format(message, title))
+    			 osascript -e 'display notification "{}" with title "{}"'
+    		  """.format(message, title))
 
 def printProgressBar (current, total, length=100, prefix="", suffix="", filler="#", space=" ", oncomp="Done!", border="[]"):
     if len(border) != 2:
@@ -44,7 +44,7 @@ if (len(sys.argv) == 2 or len(sys.argv) == 3):
 			
 			if (password == finalPsw):
 				endTime = time.time() - startTime
-				notification("Found your password!", "Your password is " + password)
+				notification("Found your password!", "Your password is '" + password +  "' (" + str(round(endTime, 4)) + " seconds)")
 				print("\n------------")
 				print("Found your password after " + str(count) +  " trys (" + str(round(endTime, 4)) + " seconds)")
 				print("\nYour password is: " + password)
